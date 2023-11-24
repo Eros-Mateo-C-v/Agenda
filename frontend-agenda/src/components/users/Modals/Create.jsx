@@ -3,14 +3,14 @@ import { Alert, Button, Form, Modal } from 'react-bootstrap'
 import createUser from './../../../services/users/create'
 
 function Create({ show, onClose }) {
-    
+
     const [showAlert, setShowAlert] = useState(false)
     const [user, setUser] = useState({
         name: '',
         email: '',
         password: '',
         status: true,
-        
+
     })
 
     const handleClose = () => {
@@ -31,6 +31,7 @@ function Create({ show, onClose }) {
             })
             setTimeout(() => {
                 setShowAlert(false)
+                handleClose()
             }, 2500);
         } catch (error) {
             console.log(error)

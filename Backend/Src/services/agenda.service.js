@@ -6,7 +6,7 @@ class AgendaService {
     }
 
     async getAll(){
-        const Agenda = await this.model.findAll()
+        const Agendas = await this.model.findAll()
         return Agendas
     }
 

@@ -23,7 +23,7 @@ module.exports = {
         type: Sequelize.DataTypes.TIME,
         allowNull: false,
       },
-     Usurario: {
+     Usuario: {
         type: Sequelize.DataTypes.STRING,
         allowNull: false,
       },

@@ -7,7 +7,7 @@ const controller = new AgendaController()
 
 router.get('/', async (req, res )=> {
     const Agendas = await controller.index()
-    res.json({users})
+    res.json({Agendas})
 })
 router.post('/', async (req, res)=>{
     const {Fecha,Hora_Inicio, Hora_Fin,Usuario, Lugar,status} = req.body
@@ -37,7 +37,7 @@ router.put('/:id', async (req, res)=> {
 
     try{
         const agenda = await controller.update(id, values)
-        res.status(200).json({user})
+        res.status(200).json({agenda})
     }catch (error){
         res.status(404).json({message: error.message})
     }

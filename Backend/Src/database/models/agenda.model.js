@@ -16,7 +16,7 @@ const AgendaSchema = {
         allowNull: false,
         unique:true
     },
-    Hora_Fin:{
+    Fecha_Fin:{
         type:DataTypes.TIME,
         allowNull: false
     },
@@ -36,6 +36,7 @@ const AgendaSchema = {
 
 class Agenda extends Model {
     static associate(models) {
+        this.hasMany(models.User,{as: 'users'})
     }
 
     static config(sequelize) {

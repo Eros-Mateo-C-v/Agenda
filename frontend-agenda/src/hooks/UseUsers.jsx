@@ -9,7 +9,9 @@ function UseUsers(){
       setLoading(true)
       getAllUsers()
       .then(data => {
+        console.log(data)
         const {users} =data
+        console.log(users)
         if (users) {
             setUsers(users)
         }

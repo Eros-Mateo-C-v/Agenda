@@ -10,8 +10,8 @@ router.get('/', async (req, res )=> {
     res.json({users})
 })
 router.post('/', async (req, res)=>{
-    const {name, email, password, status} = req.body
-    const user = await controller.create(name, email, password, status)
+    const {name, email, password, status,areaId,area} = req.body
+    const user = await controller.create(name, email, password, status,areaId,area)
     res.status(201).json({user})
 })
 router.get('/:id', async (red, res) => {
@@ -31,7 +31,6 @@ router.put('/:id', async (req, res)=> {
     if(name) values.name= name
     if(status) values.status = status
     if(password) values.password = password
-
     try{
         const user = await controller.update(id, values)
         res.status(200).json({user})
