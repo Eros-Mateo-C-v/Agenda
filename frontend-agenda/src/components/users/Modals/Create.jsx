@@ -28,6 +28,7 @@ function Create({ show, onClose }) {
                 password: '',
                 status: true,
                 areaId: 0,
+                AgendaId: 0
             })
             setTimeout(() => {
                 setShowAlert(false)

@@ -10,6 +10,4 @@ function setupModels(sequelize){
     Agenda.associate(sequelize.models)
     Area.associate(sequelize.models)
 }
-
 module.exports = setupModels 
-

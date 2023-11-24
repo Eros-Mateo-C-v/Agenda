@@ -9,12 +9,13 @@ class UserService {
     async getAll() {
         const users = await this.model.findAll({
             icluede: ['area']
+
         })
         return users
     }
 
-    async create(name, email, password, status, areaId, AgendaId) {
-        const user = await this.model.create({ name, email, password, status })
+    async create(name, email, password, status, areaId, area, AgendaId, Agenda ) {
+        const user = await this.model.create({ name, email, password, status, areaId, area, AgendaId, Agenda })
         if (areaid && area) {
             throw new Error("you cand provide areaId and area on same time ")
         }
@@ -32,13 +33,13 @@ class UserService {
         }
 
         if (area) {
-            values.area = area,  
+            values.area = area 
         }
         if (AgendaId) {
             values.AgendaId = AgendaId
         }
         if (Agenda) {
-            values.Agenda = Agenda,
+            values.Agenda = Agenda
            
         }
         const users = await this.model.create(values, {
